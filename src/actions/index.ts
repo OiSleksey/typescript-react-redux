@@ -1,35 +1,38 @@
-import axios from 'axios';
-import { Dispatch } from 'react';
-import { ActionsTypes } from './types';
+export * from './todos';
+export * from './types';
 
-interface Todo {
-  id: number;
-  title: string;
-  competed: boolean;
-}
+// import axios from 'axios';
+// import { Dispatch } from 'react';
+// import { ActionsTypes } from './types';
 
-type FetchAction = {
-  type: ActionsTypes.fetchTodos;
-  payload: Todo[];
-};
-
-// interface FetchTodosAction {
-//   type: ActionsTypes.fetchTodos;
-//   payload: Todo[];
+// export interface Todo {
+//   id: number;
+//   title: string;
+//   competed: boolean;
 // }
 
-const url = 'https://jsonplaceholder.typicode.com/todos';
+// export type FetchAction = {
+//   type: ActionsTypes.fetchTodos;
+//   payload: Todo[];
+// };
 
-export const fetchTodos = () => {
-  return async (dispatch: Dispatch<FetchAction>) => {
-    const response = await axios.get<Todo[]>(url);
+// // interface FetchTodosAction {
+// //   type: ActionsTypes.fetchTodos;
+// //   payload: Todo[];
+// // }
 
-    dispatch(
-      //   <FetchTodosAction>
-      {
-        type: ActionsTypes.fetchTodos,
-        payload: response.data,
-      }
-    );
-  };
-};
+// const url = 'https://jsonplaceholder.typicode.com/todos';
+
+// export const fetchTodos = () => {
+//   return async (dispatch: Dispatch<FetchAction>) => {
+//     const response = await axios.get<Todo[]>(url);
+
+//     dispatch(
+//       //   <FetchTodosAction>
+//       {
+//         type: ActionsTypes.fetchTodos,
+//         payload: response.data,
+//       }
+//     );
+//   };
+// };
